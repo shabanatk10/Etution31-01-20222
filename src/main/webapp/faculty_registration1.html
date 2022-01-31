@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="utf-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">  
+<title>faculty subject information</title>
+
+
+<style type="text/css">
+.gradient-custom {
+
+  background: #87CEEB;
+
+  
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: .75em;
+  padding-right: .75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+</style>
+</head>
+<script type="text/javascript">
+function validate_form() {
+	var getselecttime = document.querySelector('input[name="time"]:checked');   
+    
+
+     
+     var flag=0;
+     for(var i=0;i<7;i++)
+     {
+    	if(document.fac_regis["subject[]"][i].checked) 
+    		{
+    		flag++;
+    		}
+     }
+     if(flag==0)
+    	 {
+    	 alert("Select at least one Subject....");
+    	 return false;
+    	 }
+     
+     
+     if(getselecttime == null) {   
+    	    alert("Please select part time/ full time")  ;
+    	    return false;}  
+     
+     var count=0;
+     for(var i=0;i<3;i++)
+    	 {
+    	    if(document.fac_regis["syllabus[]"][i].checked)
+    	    	{
+    	    	count++;
+    	    	}
+          }
+       if(count==0)
+    	   {
+    	   alert("Select a Syllabus....");
+      	   return false;
+    	   }
+       
+       var classtype=0;
+       for(var i=0;i<2;i++)
+      {
+       if(document.fac_regis["classtype[]"][i].checked)
+    	   {
+    	  classtype++;
+    	   }
+       }
+       if(classtype==0)
+    	   {
+    	   alert("Select a mode of class....");
+      	   return false;
+    	   }
+}
+
+
+</script>
+<body>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Register class Details.....</h3>
+            <form name="fac_regis"onsubmit="return validate_form()">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                  <label>Select Subjects can take</label>
+                  
+                  </div>
+
+                </div>
+               
+
+                 
+                    <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                   
+                   <input type="checkbox"  name="subject[]" value="malayalam">
+                    <label>Malayalam</label>
+                   <input type="checkbox" name="subject[]" value="english">
+                      <label>English</label><br>
+                   <input type="checkbox"name="subject[]" value="hindi">
+                      <label>Hindi</label>
+                  <input type="checkbox"name="subject[]" value="physics">
+                     <label> Physics</label><br>
+                  <input type="checkbox"name="subject[]" value="chemistry">
+                    <label>Chemistry</label>
+                  <input type="checkbox"name="subject[]" value="biology">
+                    <label>Biology</label><br>
+                  <input type="checkbox"name="subject[]" value="mathematics">
+                    <label>Mathematics</label><br>
+                  </div>
+
+                </div>
+                
+
+               
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <label>Part Time/Full Time</label>
+                  
+
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  
+
+                  <div class="form-check form-check-inline">
+                    <input type="radio" name="time" value="parttime" >PartTime
+                    
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input type="radio" name="time" value="fulltime" >FullTime
+                  </div>
+
+                  
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+             
+                    <label class="form-label" >Select Syllabus</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+
+                  <div class="form-outline">
+                   
+                    <input type="checkbox"  name="syllabus[]" value="state">
+                       <label>State Syllabus</label><br>
+                    <input type="checkbox" name="syllabus[]" value="cbse">
+                      <label>CBSE</label><br>
+                   <input type="checkbox"name="syllabus[]" value="icse">
+                      <label> ICSE</label><br>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                <div class="form-outline">
+                  <label class="form-label select-label">Live/Recorded class</label>
+                  
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+
+                   <div class="form-check form-check-inline">
+                    <input type="checkbox" name="classtype[]" value="live" >Live
+                    
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input type="checkbox" name="classtype[]" value="recorded" >Recorded
+                  </div>
+                  
+                
+
+                </div>
+                  
+                
+              </div>
+              <div class="row">
+              <div class="col-md-6 mb-4">
+              <div class="form-outline">
+               <h6 class="mb-2 pb-1">Upload a Demo video class </h6>
+              <input id="video_file" name="video_file" type="file">
+              <div>
+              <input type="button" class="button" value="Save">
+              </div>
+              </div>
+              </div>
+              </div>
+
+
+
+
+               <div class="row">
+              <div class="mt-4 pt-2">
+                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+              </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>  
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script> 
+</body>
+</html>
